@@ -118,7 +118,9 @@ export default function RootLayout({
           id="organization-schema"
           type="application/ld+json"
           strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
         <PostHogProvider>{children}</PostHogProvider>
       </body>
