@@ -9,6 +9,7 @@ ACTA Web provides a sophisticated frontend experience for managing verifiable cr
 ## Key Features
 
 ### Passkey Authentication
+
 - **WebAuthn Integration**: Industry-standard biometric authentication
 - **No Seed Phrases**: Secure wallet creation without traditional crypto complexity
 - **Cross-Device Sync**: Passkeys work seamlessly across all your devices
@@ -16,6 +17,7 @@ ACTA Web provides a sophisticated frontend experience for managing verifiable cr
 - **Enhanced Security**: Private keys never leave your device
 
 ### Modern UI/UX
+
 - **Particle Background System**: Dynamic animated particles throughout the app
 - **Glass Morphism Design**: Transparent elements with backdrop blur effects
 - **Responsive Layout**: Mobile-first design that works on all screen sizes
@@ -23,6 +25,7 @@ ACTA Web provides a sophisticated frontend experience for managing verifiable cr
 - **Smooth Animations**: Fluid transitions and micro-interactions
 
 ### Credential Management
+
 - **Create Verifiable Credentials**: Issue tamper-proof credentials on blockchain
 - **Credential Dashboard**: Comprehensive view of all your credentials
 - **Search and Filter**: Find credentials quickly with advanced search
@@ -30,6 +33,7 @@ ACTA Web provides a sophisticated frontend experience for managing verifiable cr
 - **Status Management**: Track credential lifecycle and expiration
 
 ### API Integration
+
 - **Secure API Keys**: Generate and manage authentication keys
 - **Real-time Sync**: Live updates from the ACTA blockchain network
 - **RESTful Architecture**: Clean integration with backend services
@@ -38,18 +42,21 @@ ACTA Web provides a sophisticated frontend experience for managing verifiable cr
 ## Tech Stack
 
 ### Core Framework
+
 - **Next.js 15.5.0** with App Router and Turbopack
 - **React 19** with modern hooks and concurrent features
 - **TypeScript** for comprehensive type safety
 - **Tailwind CSS** for utility-first styling
 
 ### Authentication & Blockchain
+
 - **WebAuthn** for passkey implementation
 - **Stellar SDK** for blockchain interactions
 - **Custom Wallet Management** via passkey-derived keys
 - **JWT Authentication** for session management
 
 ### UI Components
+
 - **Radix UI** primitives for accessibility
 - **shadcn/ui** component library
 - **Lucide React** for icon system
@@ -57,6 +64,7 @@ ACTA Web provides a sophisticated frontend experience for managing verifiable cr
 - **Custom Particle System** for background effects
 
 ### Development Tools
+
 - **ESLint** with custom configuration
 - **Prettier** for code formatting
 - **Husky** for git hooks
@@ -65,6 +73,7 @@ ACTA Web provides a sophisticated frontend experience for managing verifiable cr
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 18 or higher
 - npm or yarn package manager
 - Modern browser with WebAuthn support
@@ -159,6 +168,7 @@ src/
 ## Authentication Flow
 
 ### Passkey Registration
+
 1. User visits application homepage
 2. Clicks "Authenticate with Passkey"
 3. Browser prompts for biometric authentication
@@ -168,6 +178,7 @@ src/
 7. User automatically logged in and redirected to dashboard
 
 ### Passkey Login
+
 1. Returning user visits homepage
 2. Clicks "Authenticate with Passkey"
 3. Browser recognizes existing passkey
@@ -192,12 +203,14 @@ src/
 ## Security Features
 
 ### Passkey Security
+
 - **Hardware-Backed Keys**: Stored in secure hardware (TPM, Secure Enclave)
 - **Biometric Gating**: Access requires fingerprint, face, or PIN
 - **Phishing Resistant**: Domain-bound authentication prevents attacks
 - **No Shared Secrets**: No passwords or seed phrases to compromise
 
 ### Application Security
+
 - **HTTPS Enforcement**: All communications encrypted in transit
 - **JWT Tokens**: Secure session management with expiration
 - **Input Validation**: Comprehensive sanitization of user inputs
@@ -205,6 +218,7 @@ src/
 - **Content Security Policy**: XSS and injection attack prevention
 
 ### Blockchain Security
+
 - **Immutable Storage**: Credentials permanently stored on Stellar
 - **Cryptographic Proofs**: Mathematical verification of authenticity
 - **Decentralized Verification**: No central authority required
@@ -213,12 +227,14 @@ src/
 ## Deployment
 
 ### Vercel (Recommended)
+
 1. Connect repository to Vercel
 2. Configure environment variables in dashboard
 3. Enable automatic deployments on main branch
 4. Production URL provided automatically
 
 ### Manual Deployment
+
 ```bash
 # Build application
 npm run build
@@ -228,6 +244,7 @@ npm run start
 ```
 
 ### Docker Deployment
+
 ```bash
 # Build Docker image
 docker build -t acta-web .
@@ -239,12 +256,14 @@ docker run -p 3000:3000 acta-web
 ## Browser Support
 
 ### Passkey Compatibility
+
 - **Chrome**: 67+ (Windows, macOS, Android)
 - **Safari**: 14+ (macOS, iOS)
 - **Firefox**: 60+ (Windows, macOS)
 - **Edge**: 79+ (Windows)
 
 ### Platform Support
+
 - **Windows**: Windows Hello (Windows 10+)
 - **macOS**: Touch ID, Face ID
 - **iOS**: Touch ID, Face ID
@@ -254,6 +273,7 @@ docker run -p 3000:3000 acta-web
 ## Performance
 
 ### Optimization Features
+
 - **Turbopack**: Ultra-fast build system for development
 - **App Router**: Optimized routing with React Server Components
 - **Image Optimization**: Automatic WebP conversion and lazy loading
@@ -261,6 +281,7 @@ docker run -p 3000:3000 acta-web
 - **Static Generation**: Pre-rendered pages for optimal performance
 
 ### Bundle Analysis
+
 ```bash
 # Analyze bundle size
 npm run analyze
@@ -272,6 +293,7 @@ npm run lighthouse
 ## Contributing
 
 ### Development Workflow
+
 1. Fork the repository
 2. Create feature branch (`git checkout -b feature/awesome-feature`)
 3. Make changes following code style guidelines
@@ -282,6 +304,7 @@ npm run lighthouse
 8. Create Pull Request
 
 ### Code Standards
+
 - **TypeScript**: Strict mode enabled, comprehensive typing
 - **ESLint**: Custom configuration with React and Next.js rules
 - **Prettier**: Automatic code formatting on save
@@ -293,17 +316,20 @@ npm run lighthouse
 The frontend integrates with the ACTA API for:
 
 ### Authentication Endpoints
+
 - `POST /v1/auth/register` - Passkey registration
 - `POST /v1/auth/login` - Passkey authentication
 - `GET /v1/auth/profile` - User profile data
 
 ### Credential Endpoints
+
 - `POST /v1/credentials` - Create new credentials
 - `GET /v1/credentials` - List user credentials
 - `GET /v1/credentials/:id` - Get credential details
 - `POST /v1/verify` - Verify credential authenticity
 
 ### API Key Endpoints
+
 - `POST /v1/api-keys/generate` - Generate new API key
 - `GET /v1/api-keys` - List user API keys
 - `DELETE /v1/api-keys/:id` - Revoke API key
@@ -311,12 +337,14 @@ The frontend integrates with the ACTA API for:
 ## Monitoring and Analytics
 
 ### Performance Monitoring
+
 - **Web Vitals**: Core web vitals tracking
 - **Real User Monitoring**: Performance data from actual users
 - **Error Tracking**: Comprehensive error logging and alerting
 - **Bundle Analysis**: Regular bundle size monitoring
 
 ### User Analytics
+
 - **Conversion Tracking**: Authentication flow completion rates
 - **Feature Usage**: Most used features and user journeys
 - **Performance Metrics**: Page load times and user experience
@@ -328,6 +356,7 @@ This project is part of the ACTA ecosystem for verifiable credentials on Stellar
 ## Support
 
 For questions, issues, or contributions:
+
 - **GitHub Issues**: Technical problems and feature requests
 - **Documentation**: Comprehensive guides and API reference
 - **Community**: Join our developer community discussions

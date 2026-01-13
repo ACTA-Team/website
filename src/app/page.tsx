@@ -108,6 +108,12 @@ export default function ActaLanding() {
 
       <section className="relative z-10 px-4 sm:px-6 py-6 sm:py-14">
         <div className="relative max-w-6xl mx-auto">
+          <motion.h2
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12"
+            {...fadeInUp}
+          >
+            What is ACTA?
+          </motion.h2>
           <ValueProposition />
         </div>
       </section>
@@ -130,7 +136,7 @@ export default function ActaLanding() {
             className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-16"
             {...fadeInUp}
           >
-            Use cases
+            Use Cases
           </motion.h2>
           <motion.div {...fadeInUp}>
             <UseCasesCarousel />
@@ -144,7 +150,7 @@ export default function ActaLanding() {
             className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-16"
             {...fadeInUp}
           >
-            How it works
+            How It Works
           </motion.h2>
           <motion.div {...fadeInUp}>
             <HowItWorks />
@@ -180,7 +186,7 @@ export default function ActaLanding() {
             className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-16"
             {...fadeInUp}
           >
-            Frequently asked questions
+            Frequently Asked Questions
           </motion.h2>
           <motion.div {...fadeInUp}>
             <FAQ />

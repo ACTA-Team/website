@@ -13,7 +13,7 @@ type MeltingWordProps = {
 
 export default function MeltingWord({
   word = "Acta",
-  as: Tag = "h1",
+  as: Tag = "div",
   className = "",
   delay = 0.06,
 }: MeltingWordProps) {

@@ -1,0 +1,6 @@
+# robots.txt for acta.build
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://acta.build/sitemap.xml
