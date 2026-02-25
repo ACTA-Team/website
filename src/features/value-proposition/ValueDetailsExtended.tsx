@@ -103,9 +103,9 @@ export default function ValueDetailsExtended() {
                 &ldquo;Zero databases architecture&rdquo;
               </p>
               <p className="text-white/70 leading-relaxed">
-                You don&apos;t need to store or manage credential data. ACTA keeps
-                the encrypted payload on-chain and manages the full lifecycle on
-                Soroban.
+                You don&apos;t need to store or manage credential data. ACTA
+                keeps the encrypted payload on-chain and manages the full
+                lifecycle on Soroban.
               </p>
               <div className="flex flex-wrap gap-2 pt-2">
                 <Badge className="bg-white/10 text-white border-white/20">
