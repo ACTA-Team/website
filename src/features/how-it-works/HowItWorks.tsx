@@ -51,7 +51,6 @@ function StepCard({ data }: { data: Step }) {
   const [flipped, setFlipped] = useState(false);
 
   return (
-    //  explicit height so the grid doesn't collapse
     <div
       className="relative h-[460px] sm:h-[480px] md:h-[520px] lg:h-[440px]"
       style={{ perspective: 1200 }}
@@ -116,7 +115,6 @@ function StepCard({ data }: { data: Step }) {
         >
           <div className="mb-2 text-sm font-semibold text-white/80">Sample</div>
 
-          {/*  Scrollable area for the code */}
           <div className="flex-1 min-h-0 overflow-y-auto pr-1 scrollbar-thin">
             {data.snippet ? (
               <Code>{data.snippet}</Code>
@@ -219,7 +217,6 @@ export default function HowItWorks() {
   return (
     <section aria-labelledby="how-it-works">
       <div className="relative">
-        {/* gradient line (optional) */}
         <svg
           className="pointer-events-none absolute left-0 top-1/2 hidden h-24 w-full -translate-y-1/2 lg:block"
           viewBox="0 0 100 24"

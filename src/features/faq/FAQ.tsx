@@ -65,7 +65,6 @@ const faqData = [
   },
 ];
 
-// FAQPage Schema.org JSON-LD
 const faqPageSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",

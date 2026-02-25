@@ -21,7 +21,6 @@ const FEATURES: Feature[] = [
 export default function ValueProposition() {
   return (
     <section className="space-y-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      {/* top badge stays */}
       <motion.div
         className="text-center"
         variants={stagger}
@@ -34,7 +33,7 @@ export default function ValueProposition() {
           {...fadeInUp}
         >
           <AnimatedShinyText className="font-medium">
-            “Issue trust at the speed of light.”
+            &ldquo;Issue trust at the speed of light.&rdquo;
           </AnimatedShinyText>
         </motion.div>
       </motion.div>
@@ -56,21 +55,16 @@ export default function ValueProposition() {
   );
 }
 
-/** Card styled like the reference screenshot */
 function FeatureCard({ title }: Feature) {
   return (
     <div
       className={[
         "relative h-full rounded-3xl p-6 sm:p-7 text-center",
-        // surface
         "bg-[rgba(255,255,255,0.03)] border border-white/10",
-        // inner + outer shadow
         "shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_20px_40px_rgba(0,0,0,0.35)]",
-        // hover
         "transition-all duration-300 hover:-translate-y-0.5",
         "hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_24px_60px_rgba(0,0,0,0.45)]",
         "hover:ring-1 hover:ring-white/10",
-        // double border via ::after
         "after:pointer-events-none after:absolute after:inset-0 after:rounded-3xl after:border after:border-white/5",
       ].join(" ")}
     >
@@ -78,7 +72,6 @@ function FeatureCard({ title }: Feature) {
         className={[
           "mb-3 font-extrabold uppercase tracking-[0.18em]",
           "text-transparent bg-clip-text",
-          // cream → mint gradient (como la imagen)
           "bg-[linear-gradient(180deg,#F0E7CC_0%,#E9F8D8_55%,#FFFFFF_100%)]",
           "drop-shadow-[0_0_10px_rgba(255,255,255,0.08)]",
           "text-lg sm:text-xl",
