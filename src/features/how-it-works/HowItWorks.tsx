@@ -5,7 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Globe, Link2, ShieldCheck, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const ease = [0.32, 0.72, 0, 1] as const; // cubic-bezier
+const ease = [0.4, 0, 0.2, 1] as const; // smooth ease-out
+const OPEN_DELAY = 0.10; // mini delay before opening (seconds)
+const OPEN_DURATION = 0.4; // slightly longer for smoother feel
 
 type Step = {
   id: string;
@@ -141,10 +143,12 @@ function StepRow({
 
         {/* Expandable content: spans same columns as number, icon, then content in title column */}
         <div
-          className="col-span-4 grid grid-cols-subgrid transition-[grid-template-rows] duration-300"
+          className="col-span-4 grid grid-cols-subgrid"
           style={{
             gridTemplateRows: isExpanded ? "1fr" : "0fr",
-            transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)",
+            transition: isExpanded
+              ? `grid-template-rows ${OPEN_DURATION}s ${OPEN_DELAY}s cubic-bezier(0.4, 0, 0.2, 1)`
+              : `grid-template-rows ${OPEN_DURATION}s 0s cubic-bezier(0.4, 0, 0.2, 1)`,
           }}
           role="region"
           id={contentId}
@@ -152,21 +156,31 @@ function StepRow({
           hidden={!isExpanded}
         >
           <div className="min-h-0 overflow-hidden col-span-4 grid grid-cols-subgrid">
-            <div className="col-start-3 col-span-2 min-h-0 overflow-hidden">
+            <div className="col-start-2 col-span-3 min-h-0 overflow-hidden">
               <AnimatePresence initial={false}>
                 {isExpanded && (
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{
-                      duration: 0.3,
-                      ease,
+                    initial="closed"
+                    animate="open"
+                    exit="closed"
+                    variants={{
+                      open: {
+                        opacity: 1,
+                        transition: {
+                          duration: OPEN_DURATION,
+                          delay: OPEN_DELAY,
+                          ease,
+                        },
+                      },
+                      closed: {
+                        opacity: 0,
+                        transition: { duration: OPEN_DURATION * 0.75, ease },
+                      },
                     }}
                     className="pb-6 pr-0"
                   >
                     <div className="max-w-2xl">
-                      <p className="text-sm text-white/70 sm:text-base leading-relaxed">
+                      <p className="text-sm text-[#616161] sm:text-base leading-relaxed">
                         {step.description}
                       </p>
                       <ul className="mt-4 space-y-4 text-sm text-white/70 sm:text-base">
