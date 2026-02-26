@@ -60,7 +60,7 @@ export default function ValueDetailsExtended() {
               value: "noanchor",
               icon: <Unlink className="w-4 h-4" />,
               title: "VCs without anchoring",
-              pain: "Pain: Rely entirely on the issuer’s backend; no public proof of authenticity or revocation.",
+              pain: "Pain: Rely entirely on the issuer's backend; no public proof of authenticity or revocation.",
               win: "ACTA: Anchored on Soroban public, tamper-proof verification that never depends on the issuer.",
             },
           ].map(a => (
@@ -103,9 +103,9 @@ export default function ValueDetailsExtended() {
                 &ldquo;Zero databases architecture&rdquo;
               </p>
               <p className="text-white/70 leading-relaxed">
-                You don’t need to store or manage credential data. ACTA keeps
-                the encrypted payload on-chain and manages the full lifecycle on
-                Soroban.
+                You don&apos;t need to store or manage credential data. ACTA
+                keeps the encrypted payload on-chain and manages the full
+                lifecycle on Soroban.
               </p>
               <div className="flex flex-wrap gap-2 pt-2">
                 <Badge className="bg-white/10 text-white border-white/20">

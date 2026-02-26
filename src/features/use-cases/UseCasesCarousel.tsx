@@ -1,31 +1,19 @@
 "use client";
 
 import * as React from "react";
-import { Marquee } from "@/components/ui/marquee"; // MagicUI component
+import { Marquee } from "@/components/ui/marquee";
 import {
   BadgeCheck,
   Briefcase,
   Bug,
-  Cpu,
-  Database,
   FileCheck2,
-  FileSignature,
-  Fingerprint,
   Flag,
-  GraduationCap,
   HeartHandshake,
-  Leaf,
-  LockKeyhole,
-  PackageCheck,
   Receipt,
   ShieldCheck,
-  Truck,
   UsersRound,
 } from "lucide-react";
 
-// ---------------------------------------------
-// Data
-// ---------------------------------------------
 const cases = [
   {
     Icon: FileCheck2,
@@ -79,9 +67,6 @@ const cases = [
   },
 ];
 
-// ---------------------------------------------
-// Card
-// ---------------------------------------------
 function CaseCard({
   Icon,
   title,
@@ -100,28 +85,19 @@ function CaseCard({
   );
 }
 
-// ---------------------------------------------
-// Component
-// ---------------------------------------------
 export type UseCasesCarouselProps = {
-  /** Seconds per loop (Row A). Higher = slower. */
   durationSecA?: number;
-  /** Seconds per loop (Row B). Higher = slower. */
   durationSecB?: number;
-  /** Gap between items (px). */
   gapPx?: number;
-  /** Pause animation on hover (desktop). */
   pauseOnHover?: boolean;
-  /** Number of internal repeats MagicUI should render. */
   repeat?: number;
-  /** Respect prefers-reduced-motion (stop if true). */
   respectReducedMotion?: boolean;
   className?: string;
 };
 
 export default function UseCasesCarousel({
-  durationSecA = 60, // slower defaults
-  durationSecB = 75, // a bit slower for subtle parallax
+  durationSecA = 60,
+  durationSecB = 75,
   gapPx = 16,
   pauseOnHover = true,
   repeat = 4,
@@ -157,7 +133,6 @@ export default function UseCasesCarousel({
           "linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)",
       }}
     >
-      {/* Row A (slower) */}
       <Marquee
         className="[mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]"
         pauseOnHover={!!pauseOnHover}
@@ -169,7 +144,6 @@ export default function UseCasesCarousel({
         ))}
       </Marquee>
 
-      {/* Row B (reverse & even slower for calm feel) */}
       <Marquee
         className="mt-4 opacity-90 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]"
         reverse
@@ -182,7 +156,6 @@ export default function UseCasesCarousel({
         ))}
       </Marquee>
 
-      {/* Optional hard fades if you prefer them over mask-image */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black to-transparent" />
     </div>

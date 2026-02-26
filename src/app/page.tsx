@@ -1,29 +1,24 @@
 "use client";
 
 import type React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import Aurora from "@/components/Aurora";
-import UseCasesCarousel from "@/components/UseCasesCarousel";
-
-import Image from "next/image";
-import ScrollProgress from "@/components/ScrollProgress";
-import HowItWorks from "@/components/HowItWorks";
-
-import FAQ from "@/components/FAQ";
-import ValueProposition from "@/components/ValueProposition";
-import ValuePropositionDetails from "@/components/ValueDetails";
-import ValueDetailsExtended from "@/components/ValueDetailsExtended";
-import { TextAnimate } from "@/components/ui/text-animate";
-import Footer from "@/components/Footer";
 import { Particles } from "@/components/ui/particles";
 import { ShineBorder } from "@/components/ui/shine-border";
 import { usePostHog } from "posthog-js/react";
 
-import AnimatedActa from "@/components/AnimatedActa";
-import WaitlistForm from "@/components/WaitlistForm";
-import FlipCredential from "@/components/FlipCredential";
-import HeroSubtitle from "@/components/HeroSubtitle";
+import ScrollProgress from "@/components/layout/ScrollProgress";
+import Footer from "@/components/layout/Footer";
+import AnimatedActa from "@/features/hero/AnimatedActa";
+import HeroSubtitle from "@/features/hero/HeroSubtitle";
+import ValueProposition from "@/features/value-proposition/ValueProposition";
+import ValuePropositionDetails from "@/features/value-proposition/ValueDetails";
+import ValueDetailsExtended from "@/features/value-proposition/ValueDetailsExtended";
+import HowItWorks from "@/features/how-it-works/HowItWorks";
+import UseCasesCarousel from "@/features/use-cases/UseCasesCarousel";
+import FAQ from "@/features/faq/FAQ";
+import WaitlistForm from "@/features/waitlist/WaitlistForm";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -59,9 +54,11 @@ export default function ActaLanding() {
         <div className="pointer-events-none absolute inset-0 z-0">
           {/* Logo difuminado */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <img
+            <Image
               src="/Acta-logo.png"
               alt="ACTA Logo Background"
+              width={384}
+              height={384}
               className="w-96 h-96 object-contain opacity-30 blur-[3px] scale-220"
             />
           </div>
@@ -151,20 +148,6 @@ export default function ActaLanding() {
           </motion.div>
         </div>
       </section>
-
-      {/* <section className="relative z-10 px-4 sm:px-6 py-12 sm:py-20">
-        <div className="max-w-4xl mx-auto">
-          <motion.h2
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-16"
-            {...fadeInUp}
-          >
-            Credential Demo
-          </motion.h2>
-          <motion.div className="flex justify-center" {...fadeInUp}>
-            <FlipCredential />
-          </motion.div>
-        </div>
-      </section> */}
 
       <section className="relative z-10 px-4 sm:px-6 py-12 sm:py-20">
         <div className="max-w-2xl mx-auto">

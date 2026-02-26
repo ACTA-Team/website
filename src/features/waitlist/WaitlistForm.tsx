@@ -24,7 +24,6 @@ export default function WaitlistForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<Status>("idle");
 
-  // Honeypot for bots
   const [botField, setBotField] = useState("");
 
   const validateEmail = (value: string) =>
@@ -34,7 +33,7 @@ export default function WaitlistForm() {
     e.preventDefault();
     setStatus("idle");
 
-    if (botField) return; // likely a bot
+    if (botField) return;
 
     if (!validateEmail(email)) {
       setStatus("error");
@@ -42,7 +41,6 @@ export default function WaitlistForm() {
     }
 
     setIsSubmitting(true);
-    // submit start
 
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
@@ -55,7 +53,7 @@ export default function WaitlistForm() {
           email,
           company,
           message,
-          _gotcha: botField, // honeypot
+          _gotcha: botField,
           _subject: "New waitlist signup · Acta",
           page: typeof window !== "undefined" ? window.location.href : "",
         }),
@@ -63,16 +61,12 @@ export default function WaitlistForm() {
 
       if (!res.ok) throw new Error("Submission failed");
 
-      // Reset form
       setEmail("");
       setCompany("");
       setMessage("");
       setStatus("ok");
-
-      // submit ok
-    } catch (err) {
+    } catch {
       setStatus("error");
-      // submit error
     } finally {
       setIsSubmitting(false);
     }
@@ -97,7 +91,6 @@ export default function WaitlistForm() {
         </CardHeader>
         <CardContent className="px-8 pb-8">
           <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-            {/* Honeypot field (hidden) */}
             <input
               type="text"
               name="_gotcha"
@@ -155,7 +148,6 @@ export default function WaitlistForm() {
             )}
           </form>
         </CardContent>
-        {/* soft inner vignette */}
         <div className="pointer-events-none absolute inset-0 rounded-3xl shadow-[inset_0_0_60px_rgba(255,255,255,0.03)]" />
       </Card>
     </div>

@@ -3,7 +3,7 @@
 import { useEffect, useState, useMemo, memo } from "react";
 import { motion } from "framer-motion";
 
-const SLOWDOWN = 3; // 1 = same; >1 = slower; <1 = faster
+const SLOWDOWN = 3;
 
 const StarsBackground = memo(() => {
   const [screenSize, setScreenSize] = useState({ width: 0, height: 0 });
@@ -24,9 +24,8 @@ const StarsBackground = memo(() => {
       size: Math.random() * 2.5 + 2,
       initialX: Math.random() * 120 - 10,
       initialY: Math.random() * 120 - 20,
-      // before: Math.random() * 12 + 8  (8s to 20s)
-      duration: (Math.random() * 12 + 8) * SLOWDOWN, // now slower
-      delay: Math.random() * 20, // you can increase it a bit if you want more "pauses"
+      duration: (Math.random() * 12 + 8) * SLOWDOWN,
+      delay: Math.random() * 20,
       opacity: Math.random() * 0.7 + 0.3,
     }));
   }, [isClient]);
